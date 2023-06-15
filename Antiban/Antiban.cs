@@ -51,8 +51,7 @@ namespace Antiban
         /// </summary>
         /// <param name="eventMessage"></param>
         public void PushEventMessage(EventMessage eventMessage)
-        {
-            //var mes = new EventMessageExt(eventMessage);
+        {            
             LastDateTime lastDt = new LastDateTime();
             for (int i = 0; i < localList.Count; i++)
             {
