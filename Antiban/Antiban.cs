@@ -68,10 +68,10 @@ namespace Antiban
         }
 
         /// <summary>
-        /// Обновление последних дат по приоритетам в специальном словаре.
+        /// Обновление последних дат по приоритетам.
         /// </summary>
         /// <param name="mes">Новый элемент для вставки.</param>
-        /// <param name="index">Номер индекса в списке.</param>
+        /// <param name="index">Номер индекса в локальном списке.</param>
         /// <param name="lastDt">Класс с датами по приоритетам.</param>
         private void UpdateLastDateTime(EventMessage mes, int index, LastDateTime lastDt)
         {
@@ -107,7 +107,7 @@ namespace Antiban
         /// Проверка возможности вставки элемента.<paramref name="mes"/>
         /// </summary>
         /// <param name="mes">Новый элемент для вставки.</param>
-        /// <param name="index">Номер индекса в списке.<paramref name="eventMessages"/></param>
+        /// <param name="index">Номер индекса в локальном списке.<paramref name="eventMessages"/></param>
         /// <returns>true - можно; false - нельзя;</returns>
         private bool CheckInsert(EventMessage mes, int index)
         {
@@ -127,7 +127,7 @@ namespace Antiban
         /// <summary>
         /// Определяем элементы между которыми предполагается вставка.
         /// </summary>
-        /// <param name="index">Номер индекса в списке.</param>
+        /// <param name="index">Номер индекса в локальном списке.</param>
         /// <returns>Массив с элементами нижней и верхней границами по времени.</returns>
         private EventMessage[] GetBorders(int index)
         {
@@ -179,7 +179,7 @@ namespace Antiban
         /// </summary>
         /// <param name="dic">словарь с телефономи по определенному приоритету</param>
         /// <param name="phone">номер телефона для проверки</param>
-        /// <param name="ts">период времени</param>
+        /// <param name="ts">период времени между сообщениями</param>
         /// <param name="res">отправляемое сообщение</param>
         private void CheckAndUpdateSendDateTime(Dictionary<string, DateTime> dic, string phone, TimeSpan ts, AntibanResult res)
         {
